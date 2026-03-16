@@ -1,0 +1,89 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block title %}RMGB Maritime Admin{% endblock %}
+
+{% block branding %}
+<div id="site-name" style="display:flex; align-items:center; gap:12px; padding: 8px 0;">
+  <img
+    src="/static/maritime/images/logo.jpg"
+    alt="RMGB Logo"
+    style="width:40px; height:40px; border-radius:50%; object-fit:cover; border:2px solid #fff;"
+  />
+  <a href="{% url 'admin:index' %}" style="color:white; text-decoration:none; font-size:1.1rem; font-weight:700;">
+    RMGB Maritime Services
+  </a>
+</div>
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+  /* === ADMIN CUSTOM STYLES === */
+  :root {
+    --primary: #1a2744;
+    --secondary: #1e5fa8;
+    --accent: #d0303a;
+  }
+
+  #header {
+    background: linear-gradient(135deg, #1a2744, #1e5fa8) !important;
+    color: white !important;
+    padding: 12px 20px !important;
+  }
+
+  #header a:link, #header a:visited {
+    color: white !important;
+  }
+
+  div.breadcrumbs {
+    background: #1e5fa8 !important;
+    color: rgba(255,255,255,0.8) !important;
+    padding: 10px 20px !important;
+  }
+
+  div.breadcrumbs a {
+    color: white !important;
+  }
+
+  #content-main a {
+    color: #1e5fa8 !important;
+  }
+
+  .module h2, .module caption {
+    background: #1a2744 !important;
+    color: white !important;
+  }
+
+  .button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #1e5fa8 !important;
+    border-color: #1a2744 !important;
+    color: white !important;
+    border-radius: 6px !important;
+  }
+
+  .button:hover, input[type=submit]:hover {
+    background: #1a2744 !important;
+  }
+
+  #nav-sidebar .current-app .section:link,
+  #nav-sidebar .current-app .section:visited {
+    color: white !important;
+    background: #1e5fa8 !important;
+  }
+
+  tr:nth-child(even) {
+    background: #f0f4f9 !important;
+  }
+
+  .paginator {
+    color: #1a2744 !important;
+  }
+
+  /* Welcome message */
+  #content h1 {
+    color: #1a2744 !important;
+    font-size: 1.4rem !important;
+  }
+</style>
+{% endblock %}

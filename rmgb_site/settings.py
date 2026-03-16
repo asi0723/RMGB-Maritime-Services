@@ -55,7 +55,10 @@ ROOT_URLCONF = 'rmgb_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'maritime' / 'templates'],
+        'DIRS': [
+    BASE_DIR / 'templates',
+    BASE_DIR / 'maritime' / 'templates',
+],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

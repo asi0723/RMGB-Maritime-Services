@@ -19,7 +19,11 @@
       </div>
       <div class="nav-links">
         <a href="{% url 'home' %}">Home</a>
-        <a href="#">Contact Us</a>
+        <a href="{% url 'contact' %}">Contact Us</a>
+        <div class="theme-toggle" id="themeToggle">
+          <button class="theme-btn" id="dayBtn" title="Day Mode">&#9728;</button>
+          <button class="theme-btn" id="nightBtn" title="Night Mode">&#9790;</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -32,9 +36,37 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2025 RMGB Maritime Services. All rights reserved.</p>
-    <p>Established 2015 · Philippines</p>
+    <p>&copy; 2025 RMGB Maritime Services. All rights reserved.</p>
+    <p>Established 2015 &middot; Philippines</p>
   </footer>
+
+  <script>
+    const dayBtn = document.getElementById('dayBtn');
+    const nightBtn = document.getElementById('nightBtn');
+
+    function setDay() {
+      document.body.classList.remove('dark-mode');
+      dayBtn.classList.add('active');
+      nightBtn.classList.remove('active');
+      localStorage.setItem('theme', 'light');
+    }
+
+    function setNight() {
+      document.body.classList.add('dark-mode');
+      nightBtn.classList.add('active');
+      dayBtn.classList.remove('active');
+      localStorage.setItem('theme', 'dark');
+    }
+
+    if (localStorage.getItem('theme') === 'dark') {
+      setNight();
+    } else {
+      setDay();
+    }
+
+    dayBtn.addEventListener('click', setDay);
+    nightBtn.addEventListener('click', setNight);
+  </script>
 
 </body>
 </html>
