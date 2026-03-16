@@ -147,6 +147,38 @@ body {
   box-shadow: 0 8px 24px rgba(30,95,168,0.4);
 }
 
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  border: 2px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* === BUTTON GROUP === */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 /* === CONTAINER === */
 .container {
   max-width: 1100px;
