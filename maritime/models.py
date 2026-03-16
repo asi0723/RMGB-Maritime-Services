@@ -1,0 +1,16 @@
+from django.db import models
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20, blank=True)
+    message = models.TextField()
+    sent_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.sent_at.strftime('%Y-%m-%d %H:%M')}"
+
+    class Meta:
+        ordering = ['-sent_at']
+        verbose_name = 'Contact Message'
+        verbose_name_plural = 'Contact Messages'
