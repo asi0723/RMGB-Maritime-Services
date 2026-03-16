@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RMGB Maritime Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'maritime/css/style.css' %}"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="{% static 'maritime/images/logo.jpg' %}" alt="RMGB Logo"/>
+        <span>RMGB Maritime Services</span>
+      </div>
+      <div class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 RMGB Maritime Services. All rights reserved.</p>
+    <p>Established 2015 · Philippines</p>
+  </footer>
+
+</body>
+</html>
